@@ -21,10 +21,6 @@ def normalize_root(arg: str) -> str:
         elif len(a) == 2 and a[1] == ":":
             a = a + "\\"
 
-        if os.path.isabs(a) and not a.startswith("\\\\?\\"):
-            a = "\\\\?\\" + os.path.normpath(a)
-        return a
-
     return os.path.normpath(a)
 
 def validate_root_exists(root: str) -> None:

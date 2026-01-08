@@ -1,9 +1,8 @@
-
 ROUND_DECIMALS = 2
 
 def build_rows(stats: dict, total_files: int):
     total_size = sum(v[1] for v in stats.values())
-
+    print("  Total size: " + str(total_size))
     rows = []
     for ext, (count, size) in stats.items():
         count_pct = (count / total_files) * 100 if total_files else 0
